@@ -1,4 +1,4 @@
-var MultiSigContract = artifacts.require("MultiSigWallet");
+var MultiSigContract = artifacts.require("./MultiSigWallet.sol");
 
 module.exports = function(deployer) {
   // deployment steps
