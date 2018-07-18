@@ -34,7 +34,7 @@ Expand the ```submitTransaction``` method and fill in the details. Destination a
 
 Finally, press the ```transact``` button. In the Remix console, expand the transaction and look at the details. Notice that their is a ```transactionId``` associated with to this particular transaction. Note ```transactionId``` as it is the unqiue number that will be used to confirm this particular transaction in the next step. Also note down the from address ```0xca35b7d915458ef540ade6068dfe2f44e8fa733c``` and the contract address (its address available in the to field ```0x692a70d2e424a56d2c6c27aa97d1a86395877b3a```).  
 
-<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-transaction.png">
+<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-transaction.png">
 
 
  ## Confirm Transaction
