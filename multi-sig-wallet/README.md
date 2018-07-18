@@ -52,6 +52,6 @@ Expand the transaction in Remix and take a look at logs section. Notice the pres
 
 You can check the balance of the wallet by pressing ```getCurrentBalance``` button. Remix should show 9 as the balance amount ```0: uint256: 9```.
 
-<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-confirmTransLog.png">
+<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-confirmtTransLog.png">
 
  
