@@ -2,6 +2,7 @@ pragma solidity ^0.4.18;
 
 /// @title Multisignature wallet - Allows multiple parties to agree on transactions before execution.
 /// @author Stefan George - <stefan.george@consensys.net>
+
 contract MultiSigWallet {
 
     /*
@@ -295,7 +296,7 @@ contract MultiSigWallet {
                 count += 1;
     }
 
-    /// @dev Returns total number of transactions after filers are applied.
+    /// @dev Returns total number of transactions after filters are applied.
     /// @param pending Include pending transactions.
     /// @param executed Include executed transactions.
     /// @return Total number of transactions after filters are applied.
@@ -370,7 +371,7 @@ contract MultiSigWallet {
     function getCurrentBalance() public view 
     returns (uint)
     {
-       return address(this).balance;
+        return address(this).balance;
+
     }
-    
 }
