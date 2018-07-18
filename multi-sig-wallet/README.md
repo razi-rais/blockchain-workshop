@@ -54,21 +54,35 @@ You can check the balance of the wallet by pressing ```getCurrentBalance``` butt
 
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-confirmtTransLog.png">
 
-## Removing Owner
-At some point existing owner(s) may need to be replaced. This is a common task, and supported through ```removeOwner``` method which takes existing owner address to be deleted. However, if we allow one of the owners to remove other owner(s) this may lead to undesireable situations. 
+## Adding a New Owner
+Adding a new owner is a common ask, and supported through ```addOwner``` method. This method takes address to added to an owner as an input parameter. However, if we allow one of the owners to add addtional owner(s) this may lead to undesireable situations. 
 
-For example, a rouge owner will able to remove other owner(s) and then able to perform transfers. To avoid this, we need confirmations from other owners that removal is acceptable. In the context of our contract, owner first send a request to remove another owner through the call to ```submitTransaction``` method. The ```data``` parameter of ```submitTransaction``` method is used to make contract call ```removeOwner``` with desired parameter value. If you try to call ```removeOwner``` directly, the call will fail (this is due to the [```onlyWallet```](https://github.com/razi-rais/blockchain-workshop/blob/master/multi-sig-wallet/contracts/MultiSigWallet.sol#L138) requirement that is put in place on ```removeOwner``` method, which only allows this method to be called by contract itself).
+For example, a rouge owner may able to add other rouge owner(s) and then able to perform transfers with their approval (confirmations). To avoid this, we need confirmations from other owners before any new owner is added. In the context of our contract, owner first send a request to add another owner through the call to ```submitTransaction``` method. The input parameter ```data``` plays an important role (as you will learn in the in next section) in the process making a call to ```addOwner``` method . If you try to call ```addOwner``` directly, the call will fail (this is due to the [```onlyWallet```](https://github.com/razi-rais/blockchain-workshop/blob/master/multi-sig-wallet/contracts/MultiSigWallet.sol#L138) requirement that is put in place on ```addOwner``` method, which only allows it to be called by contract itself.
 
-Let's see how we can remove ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` as an owner.
+Let's go through the step by step process of adding a new owner i-e ```0x583031d1113ad414f02576bd6afabfb302140225```.
 
 ### Prepare input 
-First, we need to prepare the valid input that can be passed to ```data``` parameter of ```removeOwner``` method.
+First, we need to prepare the valid input that can be passed to ```data``` parameter of ```addOwner``` method.
 
-* Take ```removeOwner(address)``` method signature as a string and calculate its Keccak256 hash. Then take first 4 bytes of that hash. The first 4 bytes of the hash of ```removeOwner(address)``` are ```0x7065cb48```. You can use ```web3.sha3("removeOwner(address)")``` to get the hash but its already provided to save time.
-* Take the owner address that you like to remove e.g. ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` and remove ```0x```. So ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` will become ```4b0897b0513fdc7c541b6d9d7e929c4e5364d2db```
+* Take ```addOwner(address)``` method signature as a string, and then calculate its Keccak256 hash. After you get the hash, take first 4 bytes of that hash. The first 4 bytes of the hash of ```addOwner(address)``` are ```0x7065cb48```. You can use ```web3.sha3("removeOwner(address)")``` to get the hash and then take the first 4 bytes, but its already provided to save time.
+* Take the address that you like to add and owner e.g. ```0x583031d1113ad414f02576bd6afabfb302140225``` and remove ```0x```. So ```0x583031d1113ad414f02576bd6afabfb302140225``` will become ```583031d1113ad414f02576bd6afabfb302140225```
 * Replace the ```ADDRESS``` in the string below with the owner address (without 0x). 
      
      * Before: ```0x7065cb48000000000000000000000000ADDRESS```
      
-     * After: ```0x7065cb480000000000000000000000004b0897b0513fdc7c541b6d9d7e929c4e5364d2db```
+     * After: ```0x7065cb48000000000000000000000000583031d1113ad414f02576bd6afabfb302140225```
      
+## Making a call to submitTransaction
+In Remix, expand the ```submitTransaction``` method and populate the input fields. Make sure your input looks like:
+
+* destination: ```0x692a70d2e424a56d2c6c27aa97d1a86395877b3a```
+* value: ```0```
+* data: ```0x7065cb48000000000000000000000000583031d1113ad414f02576bd6afabfb302140225```
+
+Notice, the destination is set to the wallet (contract) address ```0x692a70d2e424a56d2c6c27aa97d1a86395877b3a``` (the actual value will be different for you) , value is set```0``` as their is no ether trasfer involve, and data is set to  ```0x7065cb48000000000000000000000000583031d1113ad414f02576bd6afabfb302140225``` (as prepared in previous step).
+
+Finally, press  ```transact```.
+<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-addowner1.png">
+
+
+
