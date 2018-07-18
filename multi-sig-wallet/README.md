@@ -73,7 +73,7 @@ First, we need to prepare the valid input that can be passed to ```data``` param
      * After: ```0x7065cb48000000000000000000000000583031d1113ad414f02576bd6afabfb302140225```
      
 ## Making a call to submitTransaction
-In Remix, expand the ```submitTransaction``` method and populate the input fields. Make sure your input looks like:
+In Remix, expand the ```submitTransaction``` method and populate the input fields. Remember you need to an onwer to submit this tranaction. Make sure your input looks like:
 
 * destination: ```0x692a70d2e424a56d2c6c27aa97d1a86395877b3a```
 * value: ```0```
@@ -81,8 +81,12 @@ In Remix, expand the ```submitTransaction``` method and populate the input field
 
 Notice, the destination is set to the wallet (contract) address ```0x692a70d2e424a56d2c6c27aa97d1a86395877b3a``` (the actual value will be different for you) , value is set```0``` as their is no ether trasfer involve, and data is set to  ```0x7065cb48000000000000000000000000583031d1113ad414f02576bd6afabfb302140225``` (as prepared in previous step).
 
-Finally, press  ```transact```.
+Finally, press  ```transact```
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-addowner1.png">
 
+In Remix console pane, expand the transaction and capture its ```transactionId ``` by looking at logs section. In this case ```transactionId ``` is 4.
+<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-addowner2.png">
 
 
+## Making a call to confirmTransaction
+Since wallet require 2 owner confirmations on every transaction that is submitted, you will now confirm the transaction. In Remix select owner account (different from the one who submitted the transaction in previous step).  
