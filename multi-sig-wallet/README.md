@@ -32,10 +32,16 @@ Expand the ```submitTransaction``` method and fill in the details. Destination a
 * data: 0x00
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-submitTransaction.png">
 
-Finally, press the ```transact``` button. In the Remix console, expand the transaction and look at the details. Notice that their is a ```transactionId``` associated with to this particular transaction. Note ```transactionId``` as it is the unqiue number that will be used to confirm this particular transaction in the next step.  
+Finally, press the ```transact``` button. In the Remix console, expand the transaction and look at the details. Notice that their is a ```transactionId``` associated with to this particular transaction. Note ```transactionId``` as it is the unqiue number that will be used to confirm this particular transaction in the next step. Also note down the from address ```0xca35b7d915458ef540ade6068dfe2f44e8fa733c``` and the contract address (its address available in the to field ```0x692a70d2e424a56d2c6c27aa97d1a86395877b3a```).  
+
+<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-transaction.png">
 
 
  ## Confirm Transaction
+In order for the above transaction (sending 1 ether from contract ```0x692a70d2e424a56d2c6c27aa97d1a86395877b3a``` to ```0x583031d1113ad414f02576bd6afabfb302140225```) to get executed, two owners must confirm it. In real world, this essentially means until required number of signatures are gathered transfer will be delayed. 
+
+To check the number of conformations on this transaction, press ```getConfirmations``` button. Notice, the output ```0: address[]: _confirmations 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c``` list one of the owner accounts. This means we have 1 confirmation. If you are wondering when this conformation took place? remember that account  ```0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c``` is one of the owners and it is also the account which submited the transaction. Because its among the designated owners, automatic confirmation took place (You can however change the contract code if you don't want this tohappen). 
+
  
 
  
