@@ -18,5 +18,7 @@ For example, you can select 2 accounts to be the owners and required signature c
 Lets send some ether to the wallet (contract). Any account can send ether to the contract. Select one of the accounts from the dropdown and put 10 as the value. Finally press the ```(fallback)``` button.   
 
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-fallback.png">
+
+You can check the balance of this wallet by pressing ```(getCurrentBalance)```. Remix should show 10 as the balance amount ```0: uint256: 10``` .
  
  
