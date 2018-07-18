@@ -44,6 +44,14 @@ To check the number of conformations on this transaction, press ```getConfirmati
 
 We still need one more confirmation from another onwer, before ether can be send to the destination address. In Remix, select one of the owner accounts, make sure it is different from the account that already confirmed the transaction. 
 
-Expand the ```confirmTransaction``` method and enter the ```transactionId```. Finally, press ```transaction```. 
+Expand the ```confirmTransaction``` method and enter the ```transactionId```. Finally, press ```transact```. 
+
+<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-confirmTransaction.png">
+
+Expand the transaction in Remix and take a look at logs section. Notice the presense of an event ```Execution```, which essentially means that all confimrations needed for the transfer to take place have been completed. At this point, the destination account ```0x583031d1113ad414f02576bd6afabfb302140225``` should have ```1 ether``` deposited from the wallet address (contract) ```0x692a70d2e424a56d2c6c27aa97d1a86395877b3a```.
+
+You can check the balance of the wallet by pressing ```getCurrentBalance``` button. Remix should show 9 as the balance amount ```0: uint256: 9```.
+
+<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-confirmTransLog.png">
 
  
