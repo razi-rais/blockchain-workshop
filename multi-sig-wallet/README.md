@@ -32,5 +32,10 @@ Expand the ```submitTransaction``` method and fill in the details. Destination a
 * data: 0x00
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-submitTransaction.png">
 
-Finally, press the ```transact``` button. 
+Finally, press the ```transact``` button. In the Remix console, expand the transaction and look at the details. Notice that their is a ```transactionId``` associated with to this particular transaction. Note ```transactionId``` as it is the unqiue number that will be used to confirm this particular transaction in the next step.  
+
+
+ ## Confirm Transaction
+ 
+
  
