@@ -59,3 +59,9 @@ At some point existing owner(s) may need to be replaced. This is a common task, 
 
 For example, a rouge owner will able to remove other owner(s) and then able to perform transfers. To avoid this, we need confirmations from other owners that removal is acceptable. In the context of our contract, owner first send a request to remove another owner through the call to ```submitTransaction``` method. The ```data``` parameter of ```submitTransaction``` method is used to make contract call ```removeOwner``` with desired parameter value. If you try to call ```removeOwner``` directly, the call will fail (this is due to the [```onlyWallet```](https://github.com/razi-rais/blockchain-workshop/blob/master/multi-sig-wallet/contracts/MultiSigWallet.sol#L138) requirement that is put in place on ```removeOwner``` method, which only allows this method to be called by contract itself).
 
+Let's see how we can remove ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` as an owner.
+
+### Prepare input 
+First, we need to prepare the valid input that can be passed to ```data``` parameter of ```removeOwner``` method.
+
+* Take ```removeOwner(address)``` method signature as a string and calculate its Keccak256 hash. Then take first 4 bytes of that hash. The first 4 bytes of the hash of ```removeOwner(address)``` are ```0x7065cb48```. You can use ```web3.sha3("removeOwner(address)")``` to get the hash but its already provided to save time.
