@@ -30,8 +30,7 @@ Expand the ```submitTransaction``` method and fill in the details:
 * destination: 0x583031d1113ad414f02576bd6afabfb302140225
 * value: 1
 * data: 0x00
-
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-submitTransaction.png">
 
-
+Finally, press the ```transact``` button. 
  
