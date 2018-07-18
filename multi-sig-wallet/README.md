@@ -40,7 +40,7 @@ Finally, press the ```transact``` button. In the Remix console, expand the trans
  ## Confirm Transaction
 In order for the above transaction (sending 1 ether from contract ```0x692a70d2e424a56d2c6c27aa97d1a86395877b3a``` to ```0x583031d1113ad414f02576bd6afabfb302140225```) to get executed, two owners must confirm it. In real world, this essentially means until required number of signatures are gathered transfer will be delayed. 
 
-To check the number of conformations on this transaction, press ```getConfirmations``` button. Notice, the output ```0: address[]: _confirmations 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c``` list one of the owner accounts. This means we have 1 confirmation. If you are wondering when this conformation took place? remember that account  ```0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c``` is one of the owners and it is also the account which submited the transaction. Because its among the designated owners, automatic confirmation took place (You can however change the contract code if you don't want this tohappen). 
+To check the number of conformations on this transaction, press ```getConfirmations``` button. Notice, the a single account is listed in the output ```0: address[]: _confirmations 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c```. This means that we have 1 confirmation. If you are wondering when/how this conformation took place? remember that the account  ```0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c``` is one of the owner's account, and it is also the account which submitted the transaction. Because its among the designated owners, automatic confirmation took place (You can however change the contract code if you don't want this to happen) when transaction was submitted. 
 
  
 
