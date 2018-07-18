@@ -54,4 +54,8 @@ You can check the balance of the wallet by pressing ```getCurrentBalance``` butt
 
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-confirmtTransLog.png">
 
- 
+## Removing Owner
+At some point existing owner(s) may need to be replaced. This is a common task, and supported through ```removeOwner``` method which takes existing owner address to be deleted. However, if we allow one of the owners to remove other owner(s) this may lead to undesireable situations. 
+
+For example, a rouge owner will able to remove other owner(s) and then able to perform transfers. To avoid this, we need confirmations from other owners that removal is acceptable. In the context of our contract, owner first send a request to remove another owner through the call to ```submitTransaction``` method. However, the ```data``` parameter of ```submitTransaction``` method will be used to let contract call ```removeOwner```. If you try to call ```removeOwner``` directly, the call will fail (this is due to the [```onlyWallet```](https://github.com/razi-rais/blockchain-workshop/blob/master/multi-sig-wallet/contracts/MultiSigWallet.sol#L138) requirement on ```removeOwner``` method, that only allow this method to be called by contract itself)
+
