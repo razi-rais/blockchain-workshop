@@ -65,3 +65,9 @@ Let's see how we can remove ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` as 
 First, we need to prepare the valid input that can be passed to ```data``` parameter of ```removeOwner``` method.
 
 * Take ```removeOwner(address)``` method signature as a string and calculate its Keccak256 hash. Then take first 4 bytes of that hash. The first 4 bytes of the hash of ```removeOwner(address)``` are ```0x7065cb48```. You can use ```web3.sha3("removeOwner(address)")``` to get the hash but its already provided to save time.
+* Take the owner address that you like to remove e.g. ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` and remove ```0x```. So ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` will become ```4b0897b0513fdc7c541b6d9d7e929c4e5364d2db```
+* Replace the ```ADDRESS``` in the string below with the owner address (without 0x). 
+     Before: ```0x7065cb48000000000000000000000000ADDRESS```
+     
+     After: ```0x7065cb480000000000000000000000004b0897b0513fdc7c541b6d9d7e929c4e5364d2db```
+     
