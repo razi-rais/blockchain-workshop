@@ -23,5 +23,15 @@ You can check the balance of this wallet by pressing ```getCurrentBalance``` but
  
  
  ## Submit Transaction
-With 10 ethers in the wallet, lets try to send 1 ether to some other destination account (EOA) e.g ```0x583031d1113ad414f02576bd6afabfb302140225```. The destination account will receive 1 ether, after required number of signatures from the owners are recieved. At the moment the require number of signature count is 2. So we will need two owners to   
+With 10 ethers in the wallet, lets try to send 1 ether to some other destination account (EOA) e.g ```0x583031d1113ad414f02576bd6afabfb302140225```. The destination account will receive 1 ether, after required number of confirmations (signatures) from the owners are recieved. At the moment the require number of signature count is 2, so we will need two owners to confirm this transaction. 
+
+First submit the new transaction using one of the owner's account (e.g. ```0xca35b7d915458ef540ade6068dfe2f44e8fa733c```).
+Expand the ```submitTransaction``` method and fill in the details:
+* destination: 0x583031d1113ad414f02576bd6afabfb302140225
+* value: 1
+* data: 0x00
+
+<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-submitTransaction.png">
+
+
  
