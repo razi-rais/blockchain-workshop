@@ -42,6 +42,8 @@ In order for the above transaction (sending 1 ether from contract ```0x692a70d2e
 
 To check the number of conformations on this transaction, press ```getConfirmations``` button. Notice, the a single account is listed in the output ```0: address[]: _confirmations 0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c```. This means that we have 1 confirmation. If you are wondering when/how this conformation took place? remember that the account  ```0xCA35b7d915458EF540aDe6068dFe2F44E8fa733c``` is one of the owner's account, and it is also the account which submitted the transaction. Because its among the designated owners, automatic confirmation took place (You can however change the contract code if you don't want this to happen) when transaction was submitted. If you look at the ```logs``` section (image above), notice the event ```Confirmation``` was fired at the same time when transaction was submitted. 
 
-We still need one more confirmation from another onwer, before ether can be send to the destination address. In Remix, select one of the owner accounts, make sure it is different from the account that already confirmed the transaction.   
+We still need one more confirmation from another onwer, before ether can be send to the destination address. In Remix, select one of the owner accounts, make sure it is different from the account that already confirmed the transaction. 
+
+Expand the ```confirmTransaction``` method and enter the ```transactionId```. Finally, press ```transaction```. 
 
  
