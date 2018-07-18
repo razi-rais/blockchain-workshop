@@ -19,6 +19,9 @@ Lets send some ether to the wallet (contract). Any account can send ether to the
 
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-fallback.png">
 
-You can check the balance of this wallet by pressing ```(getCurrentBalance)```. Remix should show 10 as the balance amount ```0: uint256: 10``` .
+You can check the balance of this wallet by pressing ```getCurrentBalance``` button. Remix should show 10 as the balance amount ```0: uint256: 10``` .
  
+ 
+ ## Submit Transaction
+With 10 ethers in the wallet, lets try to send 1 ether to some other destination account (EOA) e.g ```0x583031d1113ad414f02576bd6afabfb302140225```. The destination account will receive 1 ether, after required number of signatures from the owners are recieved. At the moment the require number of signature count is 2. So we will need two owners to   
  
