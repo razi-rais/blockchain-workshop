@@ -15,10 +15,9 @@ To begin with, you will deploy all the required contracts including ```MYToken``
   
   Note: ```AllinOne.sol``` file contains all the required contracts that MyToken depends upon. The ```MyToken``` contract       leverage [OpenZepppelin](https://github.com/OpenZeppelin/openzeppelin-solidity/tree/v1.2.0/contracts/token) token contracts   heavily, which are all flatten into a single file for convinence. Also, Remix ```import``` feature is not consistent while     working with contracts located on git.
   
+Please note the account that you have used to deploy ```MYToken``` contract. This account is also the owner of this contract. To get the owner address, expand the Remix transaction and ```from``` field contains the account addresss e.g. ```0xca35b7d915458ef540ade6068dfe2f44e8fa733c```
   
-
-
-
+## Transfer Token to Externally Owned Account (EOA) 
 
 
 
