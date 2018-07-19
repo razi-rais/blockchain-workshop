@@ -9,8 +9,9 @@ Please make sure following software is installated on your machine:
 * [Git](https://git-scm.com)
 * [Metamask](https://metamask.io)
 * [Docker Linux Containers](https://www.docker.com/community-edition#/download) Note: You can install Docker for Windows to run Docker Linux containers on Windows OS
-* [Remix](You can accesss it through the website https://remix.ethereum.org)
 * Ethereum EOA Account with few Ethers on Testnet (e.g. Rinkeby). You will need this to deploy and test smart contracts in lab#3.
+* [Remix](https://remix.ethereum.org)
+
 
 * Optional: [Ganache-cli](https://github.com/trufflesuite/ganache-cli)
 * Optional: [Truffle](https://github.com/trufflesuite/truffle)
@@ -26,4 +27,4 @@ Please make sure following software is installated on your machine:
 
 * [Working with Multi Signature Wallet](https://github.com/razi-rais/blockchain-workshop/tree/master/multi-sig-wallet)
 * [Working with EIP20 Tokens](https://github.com/razi-rais/blockchain-workshop/blob/master/tokens)
-* [Zero Knowedlge Proofs ]
+* [Zero Knowedlge Proofs in Ethereum ]()
