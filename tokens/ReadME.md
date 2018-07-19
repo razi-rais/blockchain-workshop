@@ -62,8 +62,17 @@ Finally, press ```transact``` button.
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/tokens-7.png">
 
 ## Transfer Tokens via MyExchange Contract to Externally Owned Account (EOA) 
-Lets say an address (EOA) e.g ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` wanted to buy 5 ```MyToken``` tokens. In the earlier [section](https://github.com/razi-rais/blockchain-workshop/edit/master/tokens/ReadME.md#20) you saw an approch that allows owner to directly transfer tokens to an address. However, lets use another approch. This time ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` address will send ```5 Ether``` to the ```MyExchange``` contract and in return will get ```5 MyToken``` tokens.
+Let's say an address (EOA) e.g ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` wanted to buy 5 ```MyToken``` tokens. In the earlier [section](https://github.com/razi-rais/blockchain-workshop/edit/master/tokens/ReadME.md#20) you saw an approch that allows owner to directly transfer tokens to an address. However, lets use another approch. This time ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` address will send ```5 Ether``` to the ```MyExchange``` contract and in return will get ```5 MyToken``` tokens.
 
   Note: The reason why 5 ether results in transfering of 5 tokens, is due to the rate we set at the time of creating    ```MyExchange``` contract. 
   
+  Following is the step by step process to get the tokens:
+  
+  * Select the account that like to receive the tokens. In this case its ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db```. 
+  
+  * Enter ```5``` in the value and make sure denomination dropdown is set to ```ether```
+  
+  <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/tokens-8.png">
+
+  * 
   
