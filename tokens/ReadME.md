@@ -26,8 +26,18 @@ Locate ```transfer``` method and expand it. Enter destination address (EOA) ```0
 
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/tokens-2.png">
 
-You can verify that tokens have been transfered successfully, by entering ```0xdd870fa1b7c4700f2bd7f44238821c26f7392148``` as an input address to ```balanceOf``` method. Press the ```balanceOf``` and it should output 500.
+You can verify that tokens have been transfered successfully, by entering ```0xdd870fa1b7c4700f2bd7f44238821c26f7392148``` as an input address to ```balanceOf``` method. Press the ```balanceOf``` button and it should output 500 (ignore the other details in the output)
 
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/tokens-3.png">
 
+Great, you just transfer tokens to EOA but how about delegating the tasks of transfering token to a a seperate contract? That way you don't have to tranfer tokens your self. Also, you can impose rules like ```1 MyToken costs 1 Ether``` or may be some other rate that you are comfortable with. 
+
+You can do this by creating a simple exchange contract for transferring tokens. Basically, a contract that will be assigned a  certain quota (or allowance) of tokens, that it can tansfer from owner's balance to destination address (EOA or can be another contract). 
+
+Deploy MyExchange Contract
+Lets deploy the ```MyExchange```contract. Select ```MyExchange``` from the list of contracts. You will need to provide two input parameters:
+
+* _MYToken: ```MYToken``` contract address. Within Remix, you can copy the ```MYToken``` address by selecting the copy option next to the ```MYToken at 0xdc0...46222 (memory)``` heading. For example: 0xdc04977a2078c8ffdf086d618d1f961b6c546222
+
+* _MYTOwner: This is the owner address 
 
