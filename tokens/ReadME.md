@@ -12,7 +12,8 @@ To begin with, you will deploy all the required contracts including ```MYToken``
 
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/tokens-1.png">
 
-  Note: ```AllinOne.sol``` file contains all the required contracts that MyToken depends upon. The ```MyToken``` contract leverages heavily on [OpenZepppelin](https://github.com/OpenZeppelin/openzeppelin-solidity/tree/v1.2.0/contracts/token) which are all flatten into single file for convinence. Also, Remix ```import``` feature is not consistent while working with contracts located on git.
+  
+    Note: ```AllinOne.sol``` file contains all the required contracts that MyToken depends upon. The ```MyToken``` contract leverage [OpenZepppelin](https://github.com/OpenZeppelin/openzeppelin-solidity/tree/v1.2.0/contracts/token) token contracts heavily, which are all flatten into a single file for convinence. Also, Remix ```import``` feature is not consistent while working with contracts located on git.
   
   
 
