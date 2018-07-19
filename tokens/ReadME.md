@@ -78,7 +78,7 @@ Let's say an address (EOA) e.g ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` 
 
   <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/tokens-9.png">
   
-  * Verify that the account ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` has received ```5``` by entering the account address in the ```balanceOf``` method available within ```MyToken``` contract pane.
+  * Verify that the account ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` has received ```5``` tokens by entering the account address in the ```balanceOf``` method available within ```MyToken``` contract pane.
   
     <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/tokens-10.png">
 
