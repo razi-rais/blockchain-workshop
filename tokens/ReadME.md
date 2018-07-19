@@ -24,4 +24,4 @@ Lets transfer 500 tokens from ```MYToken``` to ```0xdd870fa1b7c4700f2bd7f4423882
 
 Locate ```tranfer``` method and expand it. Enter destination address (EOA) ```0xdd870fa1b7c4700f2bd7f44238821c26f7392148``` (choose different address if needed) and value of 500 (which is the amount of token that will be transfered).
 
-<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/tokens-1.png">
+<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/tokens-2.png">
