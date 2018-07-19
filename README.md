@@ -30,3 +30,11 @@ Please make sure following software is installated on your machine:
 * [1. Working with Multi Signature Wallet](https://github.com/razi-rais/blockchain-workshop/tree/master/multi-sig-wallet)
 * [2. Working with EIP20 Tokens](https://github.com/razi-rais/blockchain-workshop/blob/master/tokens)
 * [3. zk-SNARKs in Ethereum ](https://github.com/razi-rais/blockchain-workshop/edit/master/zk-SNARKs)
+
+## Before starting the labs
+
+Make sure you have cloned the repo:
+
+``` 
+https://github.com/razi-rais/blockchain-workshop.git
+``` 
