@@ -17,7 +17,7 @@ To begin with, you will deploy all the required contracts including ```MYToken``
   
 Please note the account that you have used to deploy ```MYToken``` contract. This account is also the owner of this contract. To get the owner address, expand the Remix transaction and ```from``` field contains the account addresss e.g. ```0xca35b7d915458ef540ade6068dfe2f44e8fa733c```
   
-## Transfer Token to Externally Owned Account (EOA) 
+## Transfer Tokens Directly to Externally Owned Account (EOA) 
 To transfer the tokens to a EOA (accounts that are not contract), you will need to use ```transfer``` method inside ```MYToken``` contract. Make sure you are owner of the contract before proceeding. 
 
 Lets transfer 500 tokens from ```MYToken``` to ```0xdd870fa1b7c4700f2bd7f44238821c26f7392148``` (one of the accounts available with JavaScript VM in Remix). 
@@ -46,10 +46,18 @@ Lets deploy the ```MyExchange```contract. Select ```MyExchange``` from the list 
 After you enter all the values, press ```transact```
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/tokens-5.png">
 
-You should see the ```MyExchange``` contract appear in the Remix. Note the contract address as you will need it in the next step. You can also press ```MyToken``` and ```MyOwner``` buttons to see respective addresses in the output.
+You should see the ```MyExchange``` contract appear in the Remix. Note the address of ```MyExchange``` contract (```0xa5a2075994ca25397b8dab82e4834c1b09051d57```) as you will need it in the next step. You can also press ```MyToken``` and ```MyOwner``` buttons to see respective addresses in the output.
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/tokens-6.png">
 
+## Delegate Contract to Transfer Tokens
+You are now ready to approve ```MyExchange``` to transfer tokens on behalf of an owner ```0xca35b7d915458ef540ade6068dfe2f44e8fa733c``` account. 
 
+Locate ```approve``` method of ```MyToken```, and enter the values for:
 
+* _spender: ```MyExchange``` contract address, e.g ```0xa5a2075994ca25397b8dab82e4834c1b09051d57```
 
+* _value: Total amount of tokens that ```MyExchange``` can transfer from the owner's account to another account. Behind the scene ```MyExchange``` call ```transferFrom``` method inside ```MyContract```.
+
+Finally, press ```transact``` button.
+<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/tokens-7.png">
 
