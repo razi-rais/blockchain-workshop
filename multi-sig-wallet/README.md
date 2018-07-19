@@ -107,4 +107,4 @@ You can also verify that the new owner ```0x583031d1113ad414f02576bd6afabfb30214
 
 You should see ```0x583031d1113ad414f02576bd6afabfb302140225``` listed among the owners. 
 
-<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-addowner3.png">
+<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-addowner4.png">
