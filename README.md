@@ -36,5 +36,8 @@ Please make sure following software is installated on your machine:
 Make sure you have cloned the repo:
 
 ``` 
-https://github.com/razi-rais/blockchain-workshop.git
+git clone https://github.com/razi-rais/blockchain-workshop.git
+
+cd blockchain-workshop
+
 ``` 
