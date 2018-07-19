@@ -1,6 +1,8 @@
 # blockchain-workshop
 Hands-on labs and other helpful resources for the attendees of my blockchain workshop.
 
+This workshop is developed by [Razi Rais](/LICENSE)
+
 ## Prerequisites
 
 ### Software
