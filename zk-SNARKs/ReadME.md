@@ -35,7 +35,7 @@ def main(pubName,private yearOfBirth, private centuryOfBirth):
   return result 
 ```
 -------------------------------------------------------------------
- Note: Razi = 8297122105. Covert text to decimal using the website: https://cryptii.com/decimal-text
+ Note: Razi = 8297122105. Convert text to decimal using the website: https://cryptii.com/decimal-text
 
 * Compile the code file:
 
