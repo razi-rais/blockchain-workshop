@@ -18,4 +18,8 @@ Please make sure following software is installated on your machine:
 ### Skills
 
 * Working knowledge of Ethereum, including configuring Geth/Parity and programming in Solidity. 
-* Basic understanding of cryptography topics including hashing, encryption (RSA, ESCA etc) and digitial signatures is required.  
+* Basic understanding of cryptography topics including hashing, encryption (RSA, ESCA etc) and digitial signatures.
+
+## Labs
+
+* [Working with Multi Signature Wallet](https://github.com/razi-rais/blockchain-workshop/tree/master/multi-sig-wallet)
