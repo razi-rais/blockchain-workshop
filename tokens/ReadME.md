@@ -43,5 +43,8 @@ Lets deploy the ```MyExchange```contract. Select ```MyExchange``` from the list 
 
 * _rate: Enter the value ```1```. You can experiment with other values but keep in mind that this is the rate which determine how may tokens will be transfer against 1 ether. So rate of 1 means, 1 MyToken for 1 Ether.
 
+After you enter all the values, press ```transact```
+<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/tokens-4.png">
+
 
 
