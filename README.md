@@ -8,7 +8,7 @@ Please make sure following software is installated on your machine:
 
 * [Git](https://git-scm.com)
 * [Metamask](https://metamask.io)
-* [Docker Linux Containers](https://www.docker.com/community-edition#/download) Note: You can install Docker for Windows to run Docker Linux containers on Windows OS
+* [Docker Linux Containers](https://www.docker.com/community-edition#/download) Note for Windows users: You can install Docker for Windows to run Docker Linux containers on Windows OS
 * [Remix](https://remix.ethereum.org)
 * Ethereum Account (EOA)  with few ethers on Testnet (e.g. Rinkeby). You will need this to deploy and test smart contract in lab#3.
 
