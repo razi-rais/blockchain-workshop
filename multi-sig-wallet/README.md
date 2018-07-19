@@ -93,6 +93,18 @@ Since the wallet requires 2 owner confirmations on every transaction that is sub
 
 To confirm the transaction, expand the ```confirmTransaction``` method and pass in ```transactionId``` that you have noted in the previous step.Finally, press the ```transact``` button.
 
+In the Remix console pane, expand the transaction and look at the logs section. Notice, there are three events that took place:
 
+ * Confirmation
+ * OwnerAddition
+ * Execution
+ 
+If you recall, you have two of these events namely - ```Confirmation``` and ```Execution``` fired in the previous tasks then ether was send to an account. But this time, ```OwnerAddition```event is fired which make sense as you have just added another owner. 
 
+<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-addowner3.png">
 
+You can also verify that the new owner ```0x583031d1113ad414f02576bd6afabfb302140225```is indeed added by pressing the ```getOwners``` button. 
+
+You should see ```0x583031d1113ad414f02576bd6afabfb302140225``` listed among the owners. 
+
+<img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-addowner3.png">
