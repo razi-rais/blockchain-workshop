@@ -1,5 +1,5 @@
 # blockchain-workshop
-Hands-on labs and other helpful resources for the attendees of blockchain workshop.
+Hands-on labs and other helpful resources for the attendees of my blockchain workshop.
 
 ## Prerequisites
 
