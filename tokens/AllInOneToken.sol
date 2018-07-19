@@ -234,39 +234,14 @@ contract MYToken is StandardToken {
     }
 }
 
-contract MYTFaucet {
-
-	StandardToken public MYToken;
-	address public MYTOwner;
-
-	// MYTFaucet constructor, provide the address of MYToken contract and
-	// the owner address we will be approved to transferFrom
-	function MYTFaucet(address _MYToken, address _MYTOwner) public {
-
-		// Initialize the MYToken from the address provided
-		MYToken = StandardToken(_MYToken);
-		MYTOwner = _MYTOwner;
-	}
-
-	function withdraw(uint withdraw_amount) public {
-
-    	// Limit withdrawal amount of MYToken to 1000
-    	require(withdraw_amount <= 1000);
-       
-		// Use the transferFrom function of MYToken
-		MYToken.transferFrom(MYTOwner, msg.sender, withdraw_amount);
-    }
-
-	// REJECT any incoming ether
-	function () public payable { revert(); }
-
-}
 
 contract MyExchange {
 
 	StandardToken public MYToken;
 	address public MYTOwner;
 	uint rate;
+	event WithdrawSuccessful(address from, address destination, uint amount);
+    event WithdrawFailed(address from, address destination, uint amount);
 
 	// MyExchange constructor, provide the address of MYToken contract and
 	// the owner address we will be approved to transferFrom
@@ -283,16 +258,23 @@ contract MyExchange {
         //Must send ether to get MYToken
         require (msg.value > 0 ether); 
         
-        //Our exchange rate is: 1 ether equals 1 token(s) multiply by the rate.
+        //Our exchange rate is: 1 ether equals 1 token(s) multiply by the rate (set inside constructor).
         //Adjust for Wei. 1 Ether = 10**18 Wei.
          uint withdraw_amount = (msg.value / 10**18) * rate ; 
          
-        //require (msg.value  == value);
-        
-        //MYToken.allowance(MYTOwner, address(this)) <= withdrawal
         
 		// Use the transferFrom function of MYToken
-		MYToken.transferFrom(MYTOwner, msg.sender, withdraw_amount);
+		bool success = MYToken.transferFrom(MYTOwner, msg.sender, withdraw_amount);
+		if (success) 
+		{ 
+		    emit WithdrawSuccessful(MYTOwner,msg.sender, withdraw_amount); 
+		    
+		}
+		else 
+		{ 
+		    emit WithdrawFailed(MYTOwner,msg.sender, withdraw_amount);
+		}
+		
     }
 
 }
