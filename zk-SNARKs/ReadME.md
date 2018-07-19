@@ -82,7 +82,7 @@ input value should looks like:
 ```
 ### Deploy verifier.sol smart contract
 
-Verifier.sol contract is created earlier when you run the ```generate-proof``` command. Copy its content from ```cat /home/zokrates/ZoKrates/verifier.sol``` file and deploy it using Remix or Truffle.
+Verifier.sol contract is created earlier when you run the ```generate-proof``` command. Copy its content by running command ```cat /home/zokrates/ZoKrates/verifier.sol``` and then deploy the contract using Remix or Truffle.
   
   Note: If you are having issues accessing the contract, I have made one available at:
   https://github.com/razi-rais/blockchain/blob/master/articles/verifier_gt_than_21.sol. You can use this contract and the exact input provided above to verify the transaction (proof that you are over 21) in the next step.
