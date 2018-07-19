@@ -4,6 +4,8 @@ In this lab you will create a zero-knowledge proof, to satisfy (proof) a verifer
 
 You are going to use ZoKrates, a tool that help you with setup, generation of the proof, and creation of verification contract in solidity. 
 
+  Note: Make sure to use Ethereum Testnet like Rinkeby or similar for the excercise. Other test enviroments like ganache,truffle(develop) and Remix JavaScript VM may ran into issues you will deploy verifier.sol contract.
+
 ### Run ZoKrates in a Docker container
 ``` 
 docker run -it -w /home/zokrates/ZoKrates  rbinrais/zokrates:1.0 bash 
