@@ -23,3 +23,4 @@ Please make sure following software is installated on your machine:
 ## Labs
 
 * [Working with Multi Signature Wallet](https://github.com/razi-rais/blockchain-workshop/tree/master/multi-sig-wallet)
+* [Working with EIP20 Tokens](https://github.com/razi-rais/blockchain-workshop/blob/master/tokens)
