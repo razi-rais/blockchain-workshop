@@ -148,22 +148,22 @@ module.exports = function(deployer) {
 
 ```MultiSigWallet.deployed().then(function(instance) {return instance.getCurrentBalance();}).then(function(value {console.log(value);});```
 
-* Get owners
+* Get all owners
 
 ```MultiSigWallet.deployed().then(function(instance) {return instance.getOwners();}).then(function(value) {console.log(value);});```
 
-* Get number of required signatures
+* Get the number of required signatures
 
 ```MultiSigWallet.deployed().then(function(instance) {return instance.required();}).then(function(value) {console.log(value);});```
 
 * Get all accounts available (not just owners)
 ```web3.eth.getAccounts(function(err,res) { accounts = res; });```
 
-* Send Ether
+* Send Ether to contract (This will use the current default account for sending the ether)
  
 ```MultiSigWallet.deployed().then(function(instance) {return instance.send(web3.toWei(10, "ether"));}).then(function(value) {console.log(value);});```
 
-* Submit transactions (There is bug in ganache-cli so try truffle-develop or regular geth client)
+* Submit transactions (There is bug in ganache-cli so try truffle-develop or regular geth client when running this command)
 ```
 var destinationAccount = "0x821aea9a577a9b44299b9c15c88cf3087f3b5544";
 var amount = 2;
@@ -185,17 +185,7 @@ var secondAccount = "0xf17f52151ebef6c7334fad080c5704d77216b732"; //This is one 
 MultiSigWallet.deployed().then(function(instance) {return instance.confirmTransaction(txId,{from : secondAccount});}).then(function(value) {console.log(value);});
 ```
 
-* Remove 
-
-```
-//Change the owner count to 1 (we started with 2)
-var requiredOwnerCount = 1;
-var contractAddress = "0xf204a4ef082f5c04bb89f7d5e6568b796096735a";
-MultiSigWallet.deployed().then(function(instance) {return instance.changeRequirement.call(requiredOwnerCount);}).then(function(value) {console.log(value);});
-```
-
-
-* Add new owner
+* Add a new owner
 
 ```
 //data for submitTransaction to add new owner
