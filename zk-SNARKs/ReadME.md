@@ -4,7 +4,7 @@ In this lab you will create a zero-knowledge proof, to satisfy (proof) a verifer
 
 You are going to use ZoKrates, a tool that help you with setup, generation of the proof, and creation of verification contract in solidity. 
 
-  Note: Make sure to use Ethereum Testnet like Rinkeby or similar for this excercise. Other test enviroments like ganache,truffle(develop) and Remix JavaScript VM may ran into issues you will deploy verifier.sol contract.
+  Note: Make sure to use Ethereum Testnet like Rinkeby or similar for this excercise. Other test enviroments like ganache,truffle(develop) and Remix JavaScript VM may ran into issues when you deploy solidity contract.
 
 ### Run ZoKrates in a Docker container
 ``` 
@@ -82,17 +82,17 @@ input value should looks like:
 ```
 ### Deploy verifier.sol smart contract
 
-Verifier.sol contract is created earlier when you run the ```generate-proof``` command. Copy its content from ```/home/zokrates/ZoKrates/verifier.sol``` file and deploy it using Remix or Truffle.
+Verifier.sol contract is created earlier when you run the ```generate-proof``` command. Copy its content from ```cat /home/zokrates/ZoKrates/verifier.sol``` file and deploy it using Remix or Truffle.
   
   Note: If you are having issues accessing the contract, I have made one available at:
   https://github.com/razi-rais/blockchain/blob/master/articles/verifier_gt_than_21.sol. You can use this contract and the exact input provided above to verify the transaction (proof that you are over 21) in the next step.
   
 ### Verify Transaction 
-Copy the Remix input (above) and paste it in the Remix ```verifyTx``` input box. Finally press verifyTx button.
+Copy the Remix input (above) and paste it in the Remix ```verifyTx``` input box. Finally press ```verifyTx``` button.
 
 <img src="https://github.com/razi-rais/blockchain/blob/master/articles/images/verifyTx.png">
 
 You can see the transaction result by expanding the transaction pane and looking at the ```logs``` section. Notice the 
-event args with the value "Transaction successfully verified", which indicates prover is successfully manage to verify the claim (i-e age is over 21). 
+event args with the value ```"Transaction successfully verified"```, which indicates prover is successfully manage to verify the claim (i-e age is over 21). 
 
 <img src="https://github.com/razi-rais/blockchain/blob/master/articles/images/verifyTx-Logs.png"> 
