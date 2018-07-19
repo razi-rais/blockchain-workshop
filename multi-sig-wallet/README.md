@@ -108,3 +108,80 @@ You can also verify that the new owner ```0x583031d1113ad414f02576bd6afabfb30214
 You should see ```0x583031d1113ad414f02576bd6afabfb302140225``` listed among the owners. 
 
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/multisig-addowner4.png">
+
+## Truffle Commands (optional)
+
+Update the accounts in ```2_multi_signature_wallet_migration.js``` before running migrations.
+
+```
+//Accounts passed to constructor during migration:
+//["0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db","0xca35b7d915458ef540ade6068dfe2f44e8fa733c","0x14723a09acff6d2a60dcdf7aa4aff3//08fddc160c"]
+
+var MultiSigContract = artifacts.require("./MultiSigWallet.sol");
+
+module.exports = function(deployer) {
+  // deployment steps
+ 
+  //NOTE: Make sure to update the accounts below based on your Ethereum envrioment. 
+  var accounts = ["0x","0x", "0x"];
+ 
+  //Number of owner signatures required before transaction can be executed.
+  var requiredSignCount = 2;
+
+  deployer.deploy(MultiSigContract,accounts, requiredSignCount);
+
+};
+```
+
+
+### truffle console
+
+Get wallet balance
+```MultiSigWallet.deployed().then(function(instance) {return instance.getCurrentBalance();}).then(function(value) {console.log(value);});```
+
+// Get owners
+MultiSigWallet.deployed().then(function(instance) {return instance.getOwners();}).then(function(value) {console.log(value);});
+
+// Get required signatures
+MultiSigWallet.deployed().then(function(instance) {return instance.required();}).then(function(value) {console.log(value);});
+
+// Get accounts
+web3.eth.getAccounts(function(err,res) { accounts = res; });
+
+// Send Ether
+//var instance;
+//instance = MultiSigWallet.deployed().then(function(instance) { return instance;});
+
+MultiSigWallet.deployed().then(function(instance) {return instance.send(web3.toWei(10, "ether"));}).then(function(value) {console.log(value);});
+
+// Submit transactions (There is bug in ganache-cli so try truffle-develop or regular geth client)
+var destinationAccount = "0x821aea9a577a9b44299b9c15c88cf3087f3b5544";
+var amount = 2;
+var data = "0x22";
+MultiSigWallet.deployed().then(function(instance) {return instance.submitTransaction(destinationAccount,amount,data);}).then(function(value) {console.log(value);});
+
+// Get confirmations
+var txId = 0;
+MultiSigWallet.deployed().then(function(instance) {return instance.getConfirmations(txId);}).then(function(value) {console.log(value);});
+
+// Confirm Transaction (This also execute the transaction)
+var secondAccount = "0xf17f52151ebef6c7334fad080c5704d77216b732";
+MultiSigWallet.deployed().then(function(instance) {return instance.confirmTransaction(txId,{from : secondAccount});}).then(function(value) {console.log(value);});
+
+// Remove 
+//Change the owner count to 1 (we started with 2)
+var requiredOwnerCount = 1;
+var contractAddress = "0xf204a4ef082f5c04bb89f7d5e6568b796096735a";
+MultiSigWallet.deployed().then(function(instance) {return instance.changeRequirement.call(requiredOwnerCount);}).then(function(value) {console.log(value);});
+
+// Add new owner
+//data for submitTransaction to add new owner
+"data":"0x7065cb4800000000000000000000000014723a09acff6d2a60dcdf7aa4aff308fddc160c"
+"data":"0x7065cb48000000000000000000000000f17f52151ebef6c7334fad080c5704d77216b732"
+"data":"0x7065cb48000000000000000000000000583031d1113ad414f02576bd6afabfb302140225"
+var contractAddress = "0xf204a4ef082f5c04bb89f7d5e6568b796096735a";
+var amount = 0;
+var data = "0x7065cb480000000000000000000000006330a553fc93768f612722bb8c2ec78ac90b3bbc";
+MultiSigWallet.deployed().then(function(instance) {return instance.submitTransaction(contractAddress,amount,data);}).then(function(value) {console.log(value);});
+
+
