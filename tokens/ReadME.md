@@ -34,10 +34,12 @@ Great, you just transfer tokens to EOA but how about delegating the tasks of tra
 
 You can do this by creating a simple exchange contract for transferring tokens. Basically, a contract that will be assigned a  certain quota (or allowance) of tokens, that it can tansfer from owner's balance to destination address (EOA or can be another contract). 
 
-Deploy MyExchange Contract
+## Deploy MyExchange Contract
 Lets deploy the ```MyExchange```contract. Select ```MyExchange``` from the list of contracts. You will need to provide two input parameters:
 
-* _MYToken: ```MYToken``` contract address. Within Remix, you can copy the ```MYToken``` address by selecting the copy option next to the ```MYToken at 0xdc0...46222 (memory)``` heading. For example: 0xdc04977a2078c8ffdf086d618d1f961b6c546222
+* _MYToken: ```MYToken``` contract address. Within Remix, you can copy the ```MYToken``` address by selecting the copy option next to the ```MYToken at 0xdc0...46222 (memory)``` heading. For example in this case its ```0xdc04977a2078c8ffdf086d618d1f961b6c546222``` (your address may be different)
 
-* _MYTOwner: This is the owner address 
+* _MYTOwner: This is the owner address of ```MYToken```. You can noted it the earlier step i-e ```0xca35b7d915458ef540ade6068dfe2f44e8fa733c```
+
+* _rate: Enter the value ```1```. You can experiment with other values but keep in mind that this is the rate which determine how may tokens will be transfer against 1 ether. So rate of 1 means, 1 MyToken against 1 Ether.
 
