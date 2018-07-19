@@ -111,8 +111,13 @@ You should see ```0x583031d1113ad414f02576bd6afabfb302140225``` listed among the
 
 ## Truffle Commands (optional)
 
-Compile the multisigwallet.sol contract
+### truffle compile
+
+* Compile the multisigwallet.sol contract
+
 ```truffle compile --reset"```
+
+### truffle migrate
 
 Update the accounts in ```2_multi_signature_wallet_migration.js``` before running migrations.
 
@@ -135,57 +140,69 @@ module.exports = function(deployer) {
 
 };
 ```
-
+```truffle migrate --reset"```
 
 ### truffle console
 
-Get wallet balance
+* Get wallet balance
 
-```MultiSigWallet.deployed().then(function(instance) {return instance.getCurrentBalance();}).then(function(value) {console.log(value);});```
+```MultiSigWallet.deployed().then(function(instance) {return instance.getCurrentBalance();}).then(function(value {console.log(value);});```
 
-// Get owners
-MultiSigWallet.deployed().then(function(instance) {return instance.getOwners();}).then(function(value) {console.log(value);});
+* Get owners
 
-// Get required signatures
-MultiSigWallet.deployed().then(function(instance) {return instance.required();}).then(function(value) {console.log(value);});
+```MultiSigWallet.deployed().then(function(instance) {return instance.getOwners();}).then(function(value) {console.log(value);});```
 
-// Get accounts
-web3.eth.getAccounts(function(err,res) { accounts = res; });
+* Get number of required signatures
 
-// Send Ether
-//var instance;
-//instance = MultiSigWallet.deployed().then(function(instance) { return instance;});
+```MultiSigWallet.deployed().then(function(instance) {return instance.required();}).then(function(value) {console.log(value);});```
 
-MultiSigWallet.deployed().then(function(instance) {return instance.send(web3.toWei(10, "ether"));}).then(function(value) {console.log(value);});
+* Get all accounts available (not just owners)
+```web3.eth.getAccounts(function(err,res) { accounts = res; });```
 
-// Submit transactions (There is bug in ganache-cli so try truffle-develop or regular geth client)
+* Send Ether
+ 
+```MultiSigWallet.deployed().then(function(instance) {return instance.send(web3.toWei(10, "ether"));}).then(function(value) {console.log(value);});```
+
+* Submit transactions (There is bug in ganache-cli so try truffle-develop or regular geth client)
+```
 var destinationAccount = "0x821aea9a577a9b44299b9c15c88cf3087f3b5544";
 var amount = 2;
 var data = "0x22";
 MultiSigWallet.deployed().then(function(instance) {return instance.submitTransaction(destinationAccount,amount,data);}).then(function(value) {console.log(value);});
+```
 
-// Get confirmations
-var txId = 0;
+* Get confirmations
+
+```
+var txId = 0; //Change transaction id if needed
 MultiSigWallet.deployed().then(function(instance) {return instance.getConfirmations(txId);}).then(function(value) {console.log(value);});
+```
 
-// Confirm Transaction (This also execute the transaction)
-var secondAccount = "0xf17f52151ebef6c7334fad080c5704d77216b732";
+* Confirm Transaction (This will also execute the transaction)
+
+```
+var secondAccount = "0xf17f52151ebef6c7334fad080c5704d77216b732"; //This is one of the owner's accounts
 MultiSigWallet.deployed().then(function(instance) {return instance.confirmTransaction(txId,{from : secondAccount});}).then(function(value) {console.log(value);});
+```
 
-// Remove 
+* Remove 
+
+```
 //Change the owner count to 1 (we started with 2)
 var requiredOwnerCount = 1;
 var contractAddress = "0xf204a4ef082f5c04bb89f7d5e6568b796096735a";
 MultiSigWallet.deployed().then(function(instance) {return instance.changeRequirement.call(requiredOwnerCount);}).then(function(value) {console.log(value);});
+```
 
-// Add new owner
+
+* Add new owner
+
+```
 //data for submitTransaction to add new owner
-"data":"0x7065cb4800000000000000000000000014723a09acff6d2a60dcdf7aa4aff308fddc160c"
-"data":"0x7065cb48000000000000000000000000f17f52151ebef6c7334fad080c5704d77216b732"
-"data":"0x7065cb48000000000000000000000000583031d1113ad414f02576bd6afabfb302140225"
 var contractAddress = "0xf204a4ef082f5c04bb89f7d5e6568b796096735a";
 var amount = 0;
-var data = "0x7065cb480000000000000000000000006330a553fc93768f612722bb8c2ec78ac90b3bbc";
+var data = "0x7065cb48000000000000000000000000583031d1113ad414f02576bd6afabfb302140225";
 MultiSigWallet.deployed().then(function(instance) {return instance.submitTransaction(contractAddress,amount,data);}).then(function(value) {console.log(value);});
+```
 
 
