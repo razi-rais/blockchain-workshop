@@ -111,6 +111,9 @@ You should see ```0x583031d1113ad414f02576bd6afabfb302140225``` listed among the
 
 ## Truffle Commands (optional)
 
+Compile the multisigwallet.sol contract
+```truffle compile --reset"```
+
 Update the accounts in ```2_multi_signature_wallet_migration.js``` before running migrations.
 
 ```
@@ -137,6 +140,7 @@ module.exports = function(deployer) {
 ### truffle console
 
 Get wallet balance
+
 ```MultiSigWallet.deployed().then(function(instance) {return instance.getCurrentBalance();}).then(function(value) {console.log(value);});```
 
 // Get owners
