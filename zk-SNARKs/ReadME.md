@@ -1,6 +1,6 @@
 
 ## Working with zk-SNARKs in Ethereum
-In this lab you will create a zero-knowledge proof, to proof the verifer that you are older than 21 years of age. By using the zk-SNARK you will not reveal your actual date of birth to the verifer. The verfication will take place on the chain and initial setup and proof generation will take place off the chain. 
+In this lab you will create a zero-knowledge proof, to satisfy (proof) a verifer that you are older than 21 years of age. By using the zk-SNARK you will not reveal your actual date of birth to the verifer. The verfication will take place on the chain and initial setup and proof generation will take place off the chain. 
 
 You are going to use ZoKrates, a tool that help you to generate proof and verification contract in solidity. 
 
