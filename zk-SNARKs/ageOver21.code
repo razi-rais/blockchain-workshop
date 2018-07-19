@@ -1,0 +1,12 @@
+//Razi = 8297122105 | Convert text to decimal: https://cryptii.com/decimal-text
+def main(pubName,private yearOfBirth, private centuryOfBirth):
+  x = 0
+  y = 0
+  z = 0
+  x = if centuryOfBirth == 19 then 1 else 0 fi
+  y = if yearOfBirth < 98 then 1 else 0 fi
+  z = if pubName == 8297122105 then 1 else 0 fi
+  total =  x + y + z 
+  result = if total == 3 then 1 else 0 fi
+  
+  return result 
