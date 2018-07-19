@@ -56,8 +56,14 @@ Locate ```approve``` method of ```MyToken```, and enter the values for:
 
 * _spender: ```MyExchange``` contract address, e.g ```0xa5a2075994ca25397b8dab82e4834c1b09051d57```
 
-* _value: Total amount of tokens that ```MyExchange``` can transfer from the owner's account to another account. Behind the scene ```MyExchange``` call ```transferFrom``` method inside ```MyContract```.
+* _value: ```7500```. Total amount of tokens that ```MyExchange``` can transfer from the owner's account to another account. Behind the scene ```MyExchange``` call ```transferFrom``` method inside ```MyToken```.
 
 Finally, press ```transact``` button.
 <img src="https://github.com/razi-rais/blockchain-workshop/blob/master/images/tokens-7.png">
 
+## Transfer Tokens via MyExchange Contract to Externally Owned Account (EOA) 
+Lets say an address (EOA) e.g ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` wanted to buy 5 ```MyToken``` tokens. In the earlier [section](https://github.com/razi-rais/blockchain-workshop/edit/master/tokens/ReadME.md#20) you saw an approch that allows owner to directly transfer tokens to an address. However, lets use another approch. This time ```0x4b0897b0513fdc7c541b6d9d7e929c4e5364d2db``` address will send ```5 Ether``` to the ```MyExchange``` contract and in return will get ```5 MyToken``` tokens.
+
+  Note: The reason why 5 ether results in transfering of 5 tokens, is due to the rate we set at the time of creating    ```MyExchange``` contract. 
+  
+  
