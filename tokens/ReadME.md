@@ -18,6 +18,8 @@ To begin with, you will deploy all the required contracts including ```MYToken``
 Please note the account that you have used to deploy ```MYToken``` contract. This account is also the owner of this contract. To get the owner address, expand the Remix transaction and ```from``` field contains the account addresss e.g. ```0xca35b7d915458ef540ade6068dfe2f44e8fa733c```
   
 ## Transfer Token to Externally Owned Account (EOA) 
+To transfer the tokens to a EOA (accounts that are not contract), you will need to use ```tranfer``` method. Make sure you are owner of the contract before proceeding. 
 
+Lets transfer 500 tokens from ```MYToken``` to ```0xdd870fa1b7c4700f2bd7f44238821c26f7392148``` (one of the accounts available with JavaScript VM in Remix). 
 
 
