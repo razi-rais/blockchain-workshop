@@ -79,8 +79,7 @@ contract RoyalityPointsExchange {
         
 		//Use the transferFrom function of RoyalityToken
 		bool success = RoyalityToken.transferFrom(TokenOwner, msg.sender, withdraw_amount);
-    //Note: Make sure you deduct the miles in case of successful transfer, otherwise miles may be reused again. This is not included as part of this contract.
-		if (success) 
+    		if (success) 
 		{ 
 		    miles.DeductMiles(msg.sender, milesCount);
 		    emit WithdrawSuccessful(TokenOwner,msg.sender, withdraw_amount);
